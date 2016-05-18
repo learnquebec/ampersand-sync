@@ -74,7 +74,7 @@ module.exports = function (xhr) {
       if (options.data && type === 'GET') {
           // make sure we've got a '?'
           options.url += includes(options.url, '?') ? '&' : '?';
-          options.url += qs.stringify(options.data);
+          options.url += qs.stringify(options.data, {indices: false});
           //delete `data` so `xhr` doesn't use it as a body
           delete options.data;
       }
