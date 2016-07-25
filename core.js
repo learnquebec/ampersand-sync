@@ -74,6 +74,7 @@ module.exports = function (xhr) {
       if (options.data && type === 'GET') {
           // make sure we've got a '?'
           options.url += includes(options.url, '?') ? '&' : '?';
+          // add {indices: false} option to allow for passing of array of resource_types
           options.url += qs.stringify(options.data, {indices: false});
           //delete `data` so `xhr` doesn't use it as a body
           delete options.data;
